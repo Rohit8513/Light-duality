@@ -1,0 +1,125 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #030305;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* 2D Projection tracking context layer definitions */
+#labels-overlay-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.lab-3d-label {
+    position: absolute;
+    padding: 6px 14px;
+    background: rgba(8, 10, 15, 0.85);
+    border: 1px solid rgba(0, 210, 255, 0.4);
+    color: #e2e8f0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transform: translate(-50%, -100%);
+    white-space: nowrap;
+    transition: opacity 0.15s ease-out;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+/* Bottom Control Panel Layout styling */
+#control-navigation-panel {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    z-index: 20;
+    background: rgba(10, 14, 22, 0.85);
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.nav-button {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-button.active {
+    background: #00d2ff;
+    color: #030305;
+    border-color: #00d2ff;
+    font-weight: 600;
+    box-shadow: 0 0 16px rgba(0, 210, 255, 0.45);
+}
+
+/* Telemetry HUD display window styling */
+#hud-telemetry-monitor {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 20;
+    background: rgba(8, 12, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #94a3b8;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+#hud-mode {
+    font-weight: bold;
+    font-size: 13px;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+#hud-count {
+    color: #00ffcc;
+    font-weight: 600;
+}

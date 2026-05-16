@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Double Slit Simulation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="labels-overlay-layer"></div>
+
+    <div id="control-navigation-panel">
+        <button id="wave-btn" class="nav-button active" onclick="setMode('wave')">Wave Field View</button>
+        <button id="particle-btn" class="nav-button" onclick="setMode('particle')">Particle Beam View</button>
+        <button id="prob-btn" class="nav-button" onclick="setMode('prob')">Probability Curve View</button>
+    </div>
+
+    <div id="hud-telemetry-monitor">
+        <div id="hud-mode">Mode: Wave Field View</div>
+        <div id="hud-count" style="display: none;">Particles: 0</div>
+    </div>
+
+    <script src="simulation.js"></script>
+</body>
+</html>
